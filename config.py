@@ -1,9 +1,13 @@
 import configparser
+import os
 from app_logging import logObject
+
+# get current working directory
+working_directory = os.getcwd()
 
 # parses config.ini file that is in same directory
 configParser = configparser.RawConfigParser()
-configFilePath = r'..\AWS-RabbitMQ\config.ini'
+configFilePath = f'{working_directory}/config.ini'
 parser = configparser.ConfigParser()
 
 # try to open config file
