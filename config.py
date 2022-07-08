@@ -10,6 +10,9 @@ configParser = configparser.RawConfigParser()
 configFilePath = f'{working_directory}/config.ini'
 parser = configparser.ConfigParser()
 
+if os.path.exists(configFilePath) is False:
+    raise logObject.warning(Exception(f'{configFilePath} not found'))
+
 # try to open config file
 try:
     parser.read(configFilePath)
